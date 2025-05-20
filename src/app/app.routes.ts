@@ -1,3 +1,13 @@
 import { Routes } from '@angular/router';
+import { RepoListComponent } from './pages/repo-list/repo-list.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  {
+    path: '',
+    component: RepoListComponent,
+  },
+  {
+    path: '**',
+    redirectTo: '',
+  },
+];
