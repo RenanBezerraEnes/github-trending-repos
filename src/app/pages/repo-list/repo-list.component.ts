@@ -1,9 +1,10 @@
 import { Component, effect, inject } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { PageListService } from '@services/page-list.service';
-
+import { RepoCardComponent } from '@components/repo-card/repo-card.component';
 @Component({
   selector: 'app-repo-list',
-  imports: [],
+  imports: [CommonModule, RepoCardComponent],
   templateUrl: './repo-list.component.html',
   styleUrl: './repo-list.component.scss',
 })

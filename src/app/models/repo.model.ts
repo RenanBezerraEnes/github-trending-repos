@@ -6,6 +6,7 @@ export interface Repo {
   description: string | null;
   stargazers_count: number;
   open_issues_count: number;
+  created_at: string;
   owner: {
     login: string;
     avatar_url: string;

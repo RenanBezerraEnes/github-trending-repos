@@ -1,1 +1,29 @@
-<p>repo-card works!</p>
+<mat-card class="repo-card" appearance="outlined">
+  <div class="repo-row">
+    <img class="avatar" [src]="repo().owner.avatar_url" [alt]="repo().owner.login" />
+    <div class="repo-content">
+      <div class="repo-header">
+        <span class="repo-name">{{ repo().full_name }}</span>
+        <span class="repo-owner">by {{ repo().owner.login }}</span>
+      </div>
+
+      <p class="description">
+        {{ repo().description || 'No description available' }}
+      </p>
+
+      <div class="stats">
+        <mat-chip>
+          <mat-icon>star</mat-icon>
+          {{ repo().stargazers_count | number }}
+        </mat-chip>
+        <mat-chip>
+          <mat-icon>bug_report</mat-icon>
+          {{ repo().open_issues_count | number }}
+        </mat-chip>
+        <p class="created">
+          Created on {{ repo().created_at | date: 'mediumDate' }} by {{ repo().owner.login }}
+        </p>
+      </div>
+    </div>
+  </div>
+</mat-card>
