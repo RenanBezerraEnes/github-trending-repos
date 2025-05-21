@@ -29,7 +29,10 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      color: gold;
+
+      mat-icon {
+        color: gold;
+      }
     }
 
     .repo-name {
