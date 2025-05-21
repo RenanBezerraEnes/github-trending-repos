@@ -19,12 +19,9 @@
     "module": "ES2022",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["src/app/components/*"],
-      "@pages/*": ["src/app/pages/*"],
-      "@services/*": ["src/app/services/*"],
-      "@api/*": ["src/app/api/*"],
-      "@models/*": ["src/app/models/*"],
-      "@utils/*": ["src/app/utils/*"],
+      "@core/*": ["src/app/core/*"],
+      "@features/*": ["src/app/features/*"],
+      "@shared/*": ["src/app/shared/*"],
       "@environments/*": ["environments/*"]
     }
   },

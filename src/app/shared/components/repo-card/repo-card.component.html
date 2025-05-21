@@ -3,7 +3,23 @@
     <img class="avatar" [src]="repo().owner.avatar_url" [alt]="repo().owner.login" />
     <div class="repo-content">
       <div class="repo-header">
-        <span class="repo-name">{{ repo().full_name }}</span>
+        <div class="repo-header-rating">
+          <span
+            class="repo-name"
+            (click)="openModal()"
+            (keydown.enter)="openModal()"
+            tabindex="0"
+            role="button"
+            >{{ repo().full_name }}</span
+          >
+          @if (rating() > 0) {
+            @for (star of [1, 2, 3, 4, 5]; track star) {
+              <span>
+                <mat-icon inline>star</mat-icon>
+              </span>
+            }
+          }
+        </div>
         <span class="repo-owner">by {{ repo().owner.login }}</span>
       </div>
 

@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable, catchError, throwError } from 'rxjs';
-import { Repo } from '../models/repo.model';
+import { Repo } from '@core/models/repo.model';
 
 @Injectable({
   providedIn: 'root',

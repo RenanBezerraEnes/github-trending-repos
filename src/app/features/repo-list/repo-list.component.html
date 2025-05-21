@@ -1,0 +1,10 @@
+<div
+  infiniteScroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="150"
+  (scrolled)="loadNextPage()"
+>
+  @for (repo of data(); track repo) {
+    <app-repo-card [repo]="repo"></app-repo-card>
+  }
+</div>
