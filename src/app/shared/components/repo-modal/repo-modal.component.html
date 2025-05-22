@@ -10,7 +10,9 @@
       [alt]="data.owner.login"
       data-testid="modal-avatar"
     />
-    <p data-testid="modal-description">Description: {{ data.description || 'No description' }}</p>
+    <p class="modal-description" data-testid="modal-description">
+      Description: {{ data.description || 'No description' }}
+    </p>
     <div class="stats" data-testid="modal-stats">
       <mat-chip>
         <mat-icon>star</mat-icon>

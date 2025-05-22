@@ -24,14 +24,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
 
     .repo-header-rating {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 4px;
+      flex-wrap: wrap;
 
       mat-icon {
         color: gold;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
       }
     }
 
@@ -40,6 +46,7 @@
       font-weight: bold;
       color: #fff;
       cursor: pointer;
+      word-break: break-word;
     }
 
     .repo-owner {
@@ -77,5 +84,42 @@
     font-size: 13px;
     color: #ffffff80;
     margin-top: 8px;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 16px;
+    padding: 12px;
+
+    .repo-header {
+      .repo-header-rating {
+        gap: 2px;
+
+        mat-icon {
+          font-size: 18px;
+          width: 18px;
+          height: 18px;
+        }
+      }
+
+      .repo-name {
+        font-size: 14px;
+      }
+    }
+
+    .stats {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .created {
+      font-size: 12px;
+      margin-top: 4px;
+      width: 100%;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      display: block;
+    }
   }
 }

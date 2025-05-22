@@ -21,11 +21,16 @@ export class RepoCardComponent {
   rating = computed(() => this.ratingService.getRating(this.repo().id));
 
   openModal() {
+    const w = window.innerWidth;
+
+    const width = `${Math.min(w * 0.98, 600)}px`;
+    const maxHeight = `calc(100vh - 16px)`;
+
     this.dialog.open(RepoModalComponent, {
-      data: {
-        ...this.repo(),
-        rating: this.rating(),
-      },
+      data: { ...this.repo(), rating: this.rating() },
+      width,
+      maxHeight,
+      position: { top: '8px' },
     });
   }
 }

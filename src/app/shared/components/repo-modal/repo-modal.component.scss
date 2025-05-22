@@ -11,6 +11,17 @@
     margin: auto;
   }
 
+  .modal-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    max-width: 100%;
+  }
+
   .stats {
     display: flex;
     align-items: center;
