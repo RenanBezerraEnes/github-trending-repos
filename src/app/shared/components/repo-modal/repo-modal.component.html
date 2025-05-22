@@ -1,12 +1,17 @@
-<h2 mat-dialog-title>
+<h2 mat-dialog-title data-testid="modal-title">
   {{ data.full_name }}
 </h2>
 
 <mat-dialog-content>
-  <div class="repo-details">
-    <img class="avatar" [src]="data.owner.avatar_url" [alt]="data.owner.login" />
-    <p>Description: {{ data.description || 'No description' }}</p>
-    <div class="stats">
+  <div class="repo-details" data-testid="repo-modal">
+    <img
+      class="avatar"
+      [src]="data.owner.avatar_url"
+      [alt]="data.owner.login"
+      data-testid="modal-avatar"
+    />
+    <p data-testid="modal-description">Description: {{ data.description || 'No description' }}</p>
+    <div class="stats" data-testid="modal-stats">
       <mat-chip>
         <mat-icon>star</mat-icon>
         {{ data.stargazers_count | number }}
@@ -16,10 +21,10 @@
         {{ data.open_issues_count | number }}
       </mat-chip>
     </div>
-    <p>Created: {{ data.created_at | date: 'mediumDate' }}</p>
+    <p data-testid="modal-created">Created: {{ data.created_at | date: 'mediumDate' }}</p>
   </div>
 
-  <div class="rating">
+  <div class="rating" data-testid="modal-rating">
     @for (star of [1, 2, 3, 4, 5]; track star) {
       <mat-icon class="star" (click)="rate(star)" [class.filled]="star <= currentRating()"
         >star</mat-icon

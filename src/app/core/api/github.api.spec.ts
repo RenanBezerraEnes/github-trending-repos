@@ -2,8 +2,8 @@
 import { TestBed } from '@angular/core/testing';
 import { provideHttpClientTesting, HttpTestingController } from '@angular/common/http/testing';
 import { provideHttpClient } from '@angular/common/http';
-import { GithubApi } from './github.api';
 import { Repo } from '@core/models/repo.model';
+import { GithubApi } from '@core/api/github.api';
 
 describe('GithubApi', () => {
   let api: GithubApi;
@@ -75,9 +75,12 @@ describe('GithubApi', () => {
 
   it('should handle API errors gracefully', () => {
     const errorMessage = 'Error fetching trending repos';
+    spyOn(console, 'error');
 
     api.getTrendingRepos(1).subscribe({
+      next: () => fail('Expected an error, but got a response'),
       error: (error) => {
+        expect(error).toBeInstanceOf(Error);
         expect(error.message).toBe(errorMessage);
       },
     });
@@ -93,7 +96,10 @@ describe('GithubApi', () => {
       );
     });
 
-    req.error(new ErrorEvent('Network error', { message: errorMessage }));
+    req.error(new ErrorEvent('Network error', { message: errorMessage }), {
+      status: 0,
+      statusText: 'Unknown Error',
+    });
   });
 
   it('should use correct date range in query', () => {

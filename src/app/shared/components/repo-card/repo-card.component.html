@@ -1,11 +1,17 @@
-<mat-card class="repo-card" appearance="outlined">
+<mat-card class="repo-card" appearance="outlined" data-testid="repo-card">
   <div class="repo-row">
-    <img class="avatar" [src]="repo().owner.avatar_url" [alt]="repo().owner.login" />
+    <img
+      class="avatar"
+      [src]="repo().owner.avatar_url"
+      [alt]="repo().owner.login"
+      data-testid="repo-avatar"
+    />
     <div class="repo-content">
       <div class="repo-header">
         <div class="repo-header-rating">
           <span
             class="repo-name"
+            data-testid="repo-name"
             (click)="openModal()"
             (keydown.enter)="openModal()"
             tabindex="0"
@@ -18,23 +24,23 @@
             </span>
           }
         </div>
-        <span class="repo-owner">by {{ repo().owner.login }}</span>
+        <span class="repo-owner" data-testid="repo-owner">by {{ repo().owner.login }}</span>
       </div>
 
-      <p class="description">
+      <p class="description" data-testid="description">
         {{ repo().description || 'No description available' }}
       </p>
 
-      <div class="stats">
-        <mat-chip>
+      <div class="stats" data-testid="stats">
+        <mat-chip data-testid="stars">
           <mat-icon>star</mat-icon>
           {{ repo().stargazers_count | number }}
         </mat-chip>
-        <mat-chip>
+        <mat-chip data-testid="issues">
           <mat-icon>bug_report</mat-icon>
           {{ repo().open_issues_count | number }}
         </mat-chip>
-        <p class="created">
+        <p class="created" data-testid="created-date">
           Created on {{ repo().created_at | date: 'mediumDate' }} by {{ repo().owner.login }}
         </p>
       </div>

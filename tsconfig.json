@@ -23,12 +23,17 @@
       "@features/*": ["src/app/features/*"],
       "@shared/*": ["src/app/shared/*"],
       "@environments/*": ["environments/*"]
-    }
+    },
+    "types": []
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    { "path": "./tsconfig.spec.json", "composite": true },
+    { "path": "./tsconfig.cypress.json", "composite": true }
+  ]
 }

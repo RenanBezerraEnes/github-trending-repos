@@ -9,7 +9,7 @@ import { RepoModalComponent } from '@shared/components/repo-modal/repo-modal.com
 import { RatingService } from '@core/services/rating-service/rating.service';
 @Component({
   selector: 'app-repo-card',
-  imports: [CommonModule, MatCardModule, MatIconModule, MatChipsModule, RepoModalComponent],
+  imports: [CommonModule, MatCardModule, MatIconModule, MatChipsModule],
   templateUrl: './repo-card.component.html',
   styleUrl: './repo-card.component.scss',
 })
